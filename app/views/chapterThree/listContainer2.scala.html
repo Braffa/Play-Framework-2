@@ -1,0 +1,8 @@
+
+@(header:Html)(chat:models.chapterThree.Chat)(footer:Html)
+@import models.chapterThree.Chat
+@header
+
+@chat.items.map { item => @listItem(item) }
+
+@footer 

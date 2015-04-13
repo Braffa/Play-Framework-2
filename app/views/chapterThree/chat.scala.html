@@ -1,0 +1,19 @@
+@(message: String)(chats:Seq[models.chapterThree.Chat])
+
+@import models.chapterThree.Chat
+
+@main("Welcome the Packt Publishing's Play 2.0 Demo") {
+<h1>@message</h1>
+@chats.sortBy(_.occurrence).groupBy(_.date.toDate).toSeq.sortBy(_._1).map { dateAndChats =>
+<div class="date">
+    <h2>-- Chat @dateAndChats._1 --</h2>
+    @dateAndChats._2.map { chat =>
+    @listContainer2{
+    <h3>-- Chat #@chat.occurrence --</h3>
+    }(chat) {
+    <hr/>
+    }
+    }
+</div>
+}
+}
