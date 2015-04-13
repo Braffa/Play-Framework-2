@@ -9,8 +9,9 @@ GET     /chapter03                  controllers.chapter03.Application.index
 GET     /chapter03withstrings       controllers.chapter03.Application.withStrings
 GET     /chapter03chat              controllers.chapter03.Application.chat
 
-GET     /chapter04data              controllers.chapter04.Data.test
+GET     /chapter04adata              controllers.chapter04a.DataController.test
 
+GET     /chapter04bdata              controllers.chapter04b.DataController.test
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -10,7 +10,7 @@ import play.api.data.Forms._
 
 import play.api.data._
 
-object Data extends Controller {
+object DataController extends Controller {
 
   def test = Action {
 
