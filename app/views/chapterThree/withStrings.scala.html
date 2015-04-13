@@ -1,0 +1,12 @@
+@(message: String)(level: Int, days: List[String])
+
+
+
+@main("Welcome the Packt Plublishing's Play 2.0 Chapter 3 with Strings") {
+<h1>@message</h1>
+<h2>Level @level</h2>
+
+    <ul>
+        @days.map {day => <li>@day</li> }
+    </ul>
+}
