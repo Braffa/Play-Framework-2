@@ -1,4 +1,4 @@
-package models.chapterThree
+package models.chapter03
 
 import org.joda.time.LocalTime
 

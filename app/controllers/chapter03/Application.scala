@@ -1,7 +1,7 @@
-package controllers.chapterThree
+package controllers.chapter03
 
-import models.chapterThree.Item
-import models.chapterThree.Chat
+import models.chapter03.Item
+import models.chapter03.Chat
 
 import org.joda.time.DateTime
 import org.joda.time.Days
@@ -15,7 +15,7 @@ object Application extends Controller {
     val level = 99
     val days = List("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
     days.foreach { println }
-    Ok(views.html.chapterThree.withStrings("It Works!")(level, days))
+    Ok(views.html.chapter03.withStrings("It Works!")(level, days))
   }
 
   def index = Action {
@@ -25,7 +25,7 @@ object Application extends Controller {
       Item("Muffley", LocalTime.now(), "There's nothing to figure out, General Turgidson. This man is obviously a psychotic"),
       Item("Turgidson", LocalTime.now(), "We-he-ell, I'd like to hold off judgment on a thing like that, sir, until all the facts are in.")
     )
-    Ok(views.html.chapterThree.index("It Works!")(level, items))
+    Ok(views.html.chapter03.index("It Works!")(level, items))
   }
 
   def chat = Action {
@@ -60,7 +60,7 @@ object Application extends Controller {
       Item("no-one", LocalTime.now(), "Yes?")
     ));
 
-    Ok(views.html.chapterThree.chat("Chat Archives")(Seq(
+    Ok(views.html.chapter03.chat("Chat Archives")(Seq(
       chat23,
       chat11,
       chat21,
