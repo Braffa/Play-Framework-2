@@ -16,4 +16,10 @@ object Application extends Controller {
     Ok(views.html.chapterThree.index("It Works!")(level, items))
   }
 
+  def withStrings = Action {
+    val level = 99
+    val days = List("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+    days.foreach { println }
+    Ok(views.html.chapterThree.withStrings("It Works!")(level, days))
+  }
 }
