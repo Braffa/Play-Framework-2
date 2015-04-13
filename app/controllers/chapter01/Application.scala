@@ -1,4 +1,4 @@
-package controllers.chapterOne
+package controllers.chapter01
 
 import play.api.mvc._
 
@@ -7,7 +7,7 @@ import play.api.libs.json.{JsObject, JsString}
 object Application extends Controller {
 
   def index = Action {
-    Ok(views.html.chapterOne.index("Hey Dave It Really Works!"))
+    Ok(views.html.chapter01.index("Hey Dave It Really Works!"))
   }
 
   def jason = Action {

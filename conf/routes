@@ -3,11 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /chapterone                 controllers.chapterOne.Application.index
-GET     /jason                      controllers.chapterOne.Application.jason
-GET     /chapterthree               controllers.chapterThree.Application.index
-GET     /chapterthreewithstrings    controllers.chapterThree.Application.withStrings
-GET     /chapterthreechat           controllers.chapterThree.Application.chat
+GET     /chapter01                  controllers.chapter01.Application.index
+GET     /jason                      controllers.chapter01.Application.jason
+GET     /chapter03                  controllers.chapter03.Application.index
+GET     /chapter03withstrings       controllers.chapter03.Application.withStrings
+GET     /chapter03chat              controllers.chapter03.Application.chat
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
