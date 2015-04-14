@@ -17,8 +17,9 @@ GET     /chapter04bdata/post         controllers.chapter04b.DataController.post
 GET     /chapter04cshow              controllers.chapter04c.DataController.show
 POST    /data                        controllers.chapter04c.DataController.post
 
-#POST    /data                       controllers.Data.post
-#POST    /data                       controllers.chapter04c.DataController.post
+GET     /chapter04dshow              controllers.chapter04d.DataController.show
+POST    /chapter04ddata              controllers.chapter04d.DataController.post
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
