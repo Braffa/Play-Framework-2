@@ -1,7 +1,19 @@
-@(userForm: models.chapter04a.User)
+@(userForm: models.chapter04b.User)
+@import play.api.Logger
 
-
-@main("Data tests") {
-    <h1>@userForm.firstName</h1>
-    <h1>@userForm.lastName</h1>
+@main("Chapter 4b  - Data tests") {
+@println("Got here 1")
+    @if(userForm.isDefined){
+        @println("Got here 2")
+        <h1>@userForm.firstName</h1>
+        <h1>@userForm.lastName</h1>
+    } else {
+        @println("Got here 3")
+        <h1>Get Some data</h1>
+        <form method=""GET" action="chapter04bdata/post">
+            <input type="text" name="firstName"/>
+            <input type="text" name="lastName"/>
+            <input type="submit" name="send" value="submit"/>
+        </form>
+    }
 }
