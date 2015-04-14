@@ -3,6 +3,10 @@
 
 @main("Chapter 4c  - Data tests") {
 @println("Got here 1")
+
+    @if(userForm.hasErrors) {
+        <div style="background-color:red; color:white;">The form has @userForm.errors.size errors</div>
+    }
     @if(userForm.value.isDefined){
         @println("Got here 2")
         <h1>@userForm.get.firstName</h1>
@@ -10,11 +14,33 @@
         <h1>@userForm.get.age</h1>
         <h2>Lives at @userForm.get.address.fullStreet</h2>
     } else {
-        @println("Got here 3")
-        @println("Got here 4 " + userForm.value.isDefined)
+        @println("Got here 3 " + userForm.value.isDefined)
         <h1>Get Some data</h1>
-            @helper.form(action = controllers.chapter04c.routes.DataController.post) {
-            @helper.inputText(userForm("name"))
+            @helper.form(action = controllers.chapter04d.routes.DataController.post) {
+            @helper.inputText(userForm("firstName"))
+            @helper.inputText(userForm("lastName"))
+
+            @helper.input(userForm("age")) { (id, name, value, args) =>
+                <input type="number" name="@name" id="@id" @toHtmlArgs(args)>
+            }
+
+            @helper.inputRadioGroup(
+                userForm("female"),
+                options = helper.options("true"->"Female", "false"->"Male")
+            )
+            <fieldset>
+            <legend>Address</legend>
+                @helper.inputText(userForm("address.fullStreet"))
+                @helper.inputText(userForm("address.county"), '_label -> "County"
+                )
+                @helper.select(userForm("address.country"), Seq(
+                "" -> "---",
+                "AR" -> "Arda",
+                "BE" -> "Belgium",
+                "SL" -> "Smurfs Land")
+                )
+            </fieldset>
+
                 <input type="submit" name="send" value="submit"/>
             }
         }

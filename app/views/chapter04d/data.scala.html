@@ -1,0 +1,22 @@
+@(userForm:Form[models.chapter04c.User])
+@main("Data tests") {
+
+@main("Chapter 4c  - Data tests") {
+@println("Got here 1")
+    @if(userForm.value.isDefined){
+        @println("Got here 2")
+        <h1>@userForm.get.firstName</h1>
+        <h1>@userForm.get.lastName</h1>
+        <h1>@userForm.get.age</h1>
+        <h2>Lives at @userForm.get.address.fullStreet</h2>
+    } else {
+        @println("Got here 3")
+        @println("Got here 4 " + userForm.value.isDefined)
+        <h1>Get Some data</h1>
+            @helper.form(action = controllers.chapter04c.routes.DataController.post) {
+            @helper.inputText(userForm("name"))
+                <input type="submit" name="send" value="submit"/>
+            }
+        }
+    }
+}
