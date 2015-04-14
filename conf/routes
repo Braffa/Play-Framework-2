@@ -12,7 +12,13 @@ GET     /chapter03chat              controllers.chapter03.Application.chat
 GET     /chapter04adata              controllers.chapter04a.DataController.test
 
 GET     /chapter04bshow              controllers.chapter04b.DataController.show
-GET    /chapter04bdata/post         controllers.chapter04b.DataController.post
+GET     /chapter04bdata/post         controllers.chapter04b.DataController.post
+
+GET     /chapter04cshow              controllers.chapter04c.DataController.show
+POST    /data                        controllers.chapter04c.DataController.post
+
+#POST    /data                       controllers.Data.post
+#POST    /data                       controllers.chapter04c.DataController.post
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
